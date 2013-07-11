@@ -1,6 +1,15 @@
-*.class
+# IDE Specifics
+.project
+*.iml
+*.ipr
+*.iws
+.idea/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# Dart Stuff
+packages
+*.dart.js
+*.js_
+*.js.deps
+*.js.map
+.buildlog
+web/out/*

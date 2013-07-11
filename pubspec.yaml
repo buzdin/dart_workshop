@@ -1,0 +1,5 @@
+name: dart-workshop
+dependencies:
+  browser: any
+  js: any
+  web_ui: any
