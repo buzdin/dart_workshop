@@ -5,11 +5,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<p>Hello!</p>
+<div id="map_canvas"></div>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-<button on-click="sayHello()" id="hello">Hello</button>
+<!--<button on-click="sayHello()" id="hello">Hello</button>-->
 
 <script type="application/dart" src="main.dart"></script>
 <script src="packages/browser/dart.js"></script>
+<script src="packages/browser/interop.js"></script>
+
 </body>
 </html>

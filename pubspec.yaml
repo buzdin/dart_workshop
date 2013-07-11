@@ -1,5 +1,6 @@
-name: dart-workshop
+name: dart_workshop
 dependencies:
   browser: any
+  google_maps: any
   js: any
   web_ui: any

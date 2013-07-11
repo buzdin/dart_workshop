@@ -17,6 +17,10 @@ packages:
     description: csslib
     source: hosted
     version: "0.4.7+7"
+  google_maps:
+    description: google_maps
+    source: hosted
+    version: "1.1.12"
   html5lib:
     description: html5lib
     source: hosted
