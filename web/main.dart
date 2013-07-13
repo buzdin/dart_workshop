@@ -4,6 +4,8 @@ import 'package:google_maps/google_maps.dart';
 
 // This is Dart Web Application bootstrap
 
+
+
 void main() {
 
   js.context.google.maps.visualRefresh = true;
@@ -23,6 +25,18 @@ void main() {
   map.onZoomChanged.listen((ignore) {
     print(map.zoom);
   });
+
+  map.onClick.listen((event) {
+    print(event.latLng);
+  });
+
+  var marker = new Marker(
+      new MarkerOptions()
+      ..position = new LatLng(56.946843515558456, 24.13162512207032)
+      ..map = map
+      ..title = 'Foo'
+      ..icon = './img/heart.png'
+  );
 }
 
 void sayHello() {

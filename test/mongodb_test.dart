@@ -1,6 +1,8 @@
 import 'package:unittest/unittest.dart';
 import 'package:mongo_dart/mongo_dart.dart';
 
+import '../lib/storage.dart';
+
 void main() {
 
   final String url = "mongodb://dart:dartIsKing@ds035338.mongolab.com:35338/dart-workshop";
@@ -23,7 +25,7 @@ void main() {
     db.open().then((c) => insert());
   });
 
-  test("query", () {
+  test("near query", () {
     var db = new Db(url);
 
 
@@ -34,6 +36,15 @@ void main() {
     }
 
     db.open().then((c) => query());
+  });
+
+  test("map to object", () {
+    var doc = {"name" : "test", "loc": [52, 24]};
+    saveOrUpdateTag(doc);
+  });
+
+  test("store from object", () {
+
   });
 
 }
