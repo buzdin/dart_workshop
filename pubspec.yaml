@@ -4,3 +4,5 @@ dependencies:
   google_maps: any
   js: any
   web_ui: any
+  unittest: any
+  mongo_dart: any
