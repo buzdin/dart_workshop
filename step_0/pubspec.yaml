@@ -1,0 +1,4 @@
+name: dart_workshop
+dependencies:
+  browser: any
+  unittest: any
