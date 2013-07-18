@@ -1,12 +1,13 @@
-import 'dart:html';
 import 'package:js/js.dart' as js;
 import 'package:google_maps/google_maps.dart';
+import 'dart:html';
+import 'dart:async';
 
 // This is Dart Web Application bootstrap
-
-
-
 void main() {
+
+  // Event loop to check for updates
+  new Timer(new Duration(seconds:5), () => print('timer'));
 
   js.context.google.maps.visualRefresh = true;
 
@@ -28,6 +29,8 @@ void main() {
 
   map.onClick.listen((event) {
     print(event.latLng);
+    query('#place_form').hidden = true;
+    HttpRequest.getString("/").then((s) => print(s));
   });
 
   var marker = new Marker(

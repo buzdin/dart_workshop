@@ -25,6 +25,14 @@ packages:
     description: csslib
     source: hosted
     version: "0.4.7+7"
+  formler:
+    description: formler
+    source: hosted
+    version: "0.0.8"
+  fukiya:
+    description: fukiya
+    source: hosted
+    version: "0.1.9"
   google_maps:
     description: google_maps
     source: hosted
@@ -33,6 +41,10 @@ packages:
     description: html5lib
     source: hosted
     version: "0.4.3"
+  http:
+    description: http
+    source: hosted
+    version: "0.5.20"
   js:
     description: js
     source: hosted
@@ -61,6 +73,10 @@ packages:
     description: source_maps
     source: hosted
     version: "0.5.20"
+  static_file_handler:
+    description: static_file_handler
+    source: hosted
+    version: "0.1.0"
   unittest:
     description: unittest
     source: hosted

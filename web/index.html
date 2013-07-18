@@ -5,42 +5,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+<div id="place_form">
+    <button>OK</button>
+</div>
+
 <div id="map_canvas"></div>
-
-
-<section id="main" class="main">
-    <template if="activeDocument != null">
-
-        <div class="title">
-            <!-- Button to go back to document list.
-                 Only visible in a small viewport. -->
-            <button on-click="contentActive = false">&lt;</button>
-
-            <!-- Document title -->
-            <div class="input-wrap">
-
-                <!-- STEP 5: Add event handler to save the active document. -->
-                <input type="text" bind-value="activeDocument.title"
-                       on-key-up="saveDocument(activeDocument)">
-            </div>
-        </div>
-
-        <!-- STEP 5: Add event handler to save the active document. -->
-        <textarea class="content" bind-value="activeDocument.content"
-                  on-key-up="saveDocument(activeDocument)"></textarea>
-
-        <div class="footer">
-
-            <!-- STEP 1: Show the current word count. -->
-            {{activeDocument.wordCount}}
-
-        </div>
-    </template>
-</section>
-
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-<!--<button on-click="sayHello()" id="hello">Hello</button>-->
 
 <script type="application/dart" src="main.dart"></script>
 <script src="packages/browser/dart.js"></script>
