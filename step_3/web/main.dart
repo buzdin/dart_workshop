@@ -15,15 +15,11 @@ void initialize(map) {
   query('#name').value = 'My Place';
   query('#icon').value = DEFAULT_ICON;
 
+  loadPlaces(map);
+
   new Timer(new Duration(seconds:5), () {
-    print("timer");
-    HttpRequest.getString("/api/places").then((response) {
-      var points = parse(response);
-      for (final point in points) {
-        var latLng = new LatLng(point['loc'][0], point['loc'][1]);
-        drawMarker(map, point['name'], point['icon'], latLng);
-      }
-    });
+    print("timer triggered");
+    loadPlaces(map);
   });
 }
 
@@ -54,6 +50,16 @@ GMap drawMap() {
   return map;
 }
 
+void loadPlaces(map) {
+  HttpRequest.getString("/api/places").then((response) {
+    var points = parse(response);
+    for (final point in points) {
+      var latLng = new LatLng(point['loc'][0], point['loc'][1]);
+      drawMarker(map, point['name'], point['icon'], latLng);
+    }
+  });
+}
+
 void savePlace(name, icon, latLng) {
   var place = {
     "name" : name,
@@ -61,9 +67,13 @@ void savePlace(name, icon, latLng) {
     "loc" : [latLng.lat, latLng.lng]
   };
 
-  var req = new HttpRequest();
-  req.open('post', '/api/places');
-  req.send(stringify(place));
+  var json = stringify(place);
+
+  var request = new HttpRequest();
+  request.open('POST', '/api/places');
+  request.setRequestHeader("Content-Type", "application/json");
+  request.setRequestHeader("Content-Length", json.length.toString());
+  request.send(json);
 }
 
 void drawMarker(map, name, icon, latLng) {

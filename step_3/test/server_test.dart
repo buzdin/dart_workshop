@@ -13,8 +13,10 @@ void main() {
   
   test("should-post", () {
     new HttpClient().postUrl(Uri.parse("http://127.0.0.1:8080/api/places")).then((request) {
+      var json = '{"id":"1", "name":"Name", "icon":".png"}';
       request.headers.contentType = new ContentType("application", "json", charset: "utf-8");
-      request.write('{"id":"1", "name":"Name", "icon":".png"}');
+      request.headers.contentLength = json.length;
+      request.write(json);
       return request.close();
     }).then(expectAsync1((response) {
       expect(response.statusCode, equals(200));
