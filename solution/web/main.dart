@@ -17,7 +17,7 @@ void initialize(map) {
 
   loadPlaces(map);
 
-  new Timer(new Duration(seconds:5), () {
+  new Timer.periodic(new Duration(seconds:5), (timer) {
     print("timer triggered");
     loadPlaces(map);
   });
