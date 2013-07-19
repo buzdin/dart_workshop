@@ -15,25 +15,11 @@ main() {
 }
 
 void getHandler(FukiyaContext context) {
-  print("GET");
-  var near = context.params['near'];
-  if (near == null) {
-    context.send("near is not set");
-  } else {
-    print(near);
-    var lat = near.split(',')[0];
-    var lng = near.split(',')[1];
-    database.fetchNearbyPlaces(lat, lng, (places) {
-      context.jsonResponse(places);
-    });
-  }
+  // TODO use database to get places
 }
 
 void postHandler(FukiyaContext context) {
-  print("POST");
-  print(context.parsedBody);
-  database.insertNewPlace(context.parsedBody);
-  context.send("OK");
+// TODO use database to add place
 }
 
 

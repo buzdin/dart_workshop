@@ -4,7 +4,7 @@ import '../web/main.dart';
 void main() {
 
   test("hello world", () {
-    print('Hello, Dart!');
+    // TODO implement hello world
   });
 
   test("2 + 2 = 4", () {
@@ -14,7 +14,6 @@ void main() {
 
 }
 
-int add(x, y) {
-  return x + y;
-}
+// TODO implement add method
+// TODO write few other test cases
 

@@ -31,9 +31,8 @@ void drawMap() {
 
   map.onClick.listen((event) {
     print(event.latLng);
-    var name = query('#name').value;
-    var icon = query('#icon').value;
-    query('#form').hidden = true;
+
+    // TODO Get place name and icon uri
 
     drawMarker(map, name, icon, event.latLng);
   });
