@@ -50,8 +50,10 @@ GMap drawMap() {
   return map;
 }
 
-void loadPlaces(map) {
-  HttpRequest.getString("/api/places").then((response) {
+void loadPlaces(GMap map) {
+  var lat = map.center.lat;
+  var lng = map.center.lng;
+  HttpRequest.getString("/api/places?near=$lat,$lng}").then((response) {
     var points = parse(response);
     for (final point in points) {
       var latLng = new LatLng(point['loc'][0], point['loc'][1]);
@@ -72,7 +74,6 @@ void savePlace(name, icon, latLng) {
   var request = new HttpRequest();
   request.open('POST', '/api/places');
   request.setRequestHeader("Content-Type", "application/json");
-  request.setRequestHeader("Content-Length", json.length.toString());
   request.send(json);
 }
 

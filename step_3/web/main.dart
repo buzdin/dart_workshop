@@ -72,7 +72,6 @@ void savePlace(name, icon, latLng) {
   var request = new HttpRequest();
   request.open('POST', '/api/places');
   request.setRequestHeader("Content-Type", "application/json");
-  request.setRequestHeader("Content-Length", json.length.toString());
   request.send(json);
 }
 

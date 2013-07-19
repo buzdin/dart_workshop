@@ -15,12 +15,12 @@ main() {
 
 void getHandler(FukiyaContext context) {
   var near = context.params['near'];
-  print("Near: " + near);
+  print(near);
   context.jsonResponse(database);
 }
 
 void postHandler(FukiyaContext context) {
-  print("New place : " + context.parsedBody);
+  print(context.parsedBody);
   database.add(context.parsedBody);
   context.send("OK");
 }
