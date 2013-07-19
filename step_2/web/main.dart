@@ -48,7 +48,3 @@ void drawMarker(map, name, icon, latLng) {
       ..icon = icon
   );
 }
-
-int add(x, y) {
-  return x + y;
-}

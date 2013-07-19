@@ -13,7 +13,7 @@ void main() {
   
   test("should-post", () {
     new HttpClient().postUrl(Uri.parse("http://127.0.0.1:8080/api/places")).then((request) {
-      var json = '{"id":"1", "name":"Name", "icon":".png"}';
+      var json = '{"name":"Name", "icon":"icon.png"}';
       request.headers.contentType = new ContentType("application", "json", charset: "utf-8");
       request.headers.contentLength = json.length;
       request.write(json);

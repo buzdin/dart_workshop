@@ -4,7 +4,3 @@ import 'dart:html';
 void main() {
   print("Hello, Dart!");
 }
-
-int add(x, y) {
-  return x + y;
-}

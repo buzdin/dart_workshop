@@ -13,3 +13,7 @@ void main() {
   });
 
 }
+
+int add(x, y) {
+  return x + y;
+}

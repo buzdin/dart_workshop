@@ -39,7 +39,3 @@ void drawMarker(map, latLng) {
       ..icon = 'http://icons.iconarchive.com/icons/designbolts/monsters-university/128/Monsters-Character-Young-Mikes-icon.png'
   );
 }
-
-int add(x, y) {
-  return x + y;
-}
