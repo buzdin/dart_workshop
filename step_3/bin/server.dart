@@ -5,7 +5,14 @@ import 'dart:json';
 final database = [];
 
 main() {
-  new Fukiya()
+ database.add({
+    "id":"123",
+    "name" : "Place",
+    "icon" : "http://icons.iconarchive.com/icons/babasse/bagg-and-boxs/64/Falcon-icon.png",
+    "loc" : [56.91902592158822, 24.186041778564462]
+ });
+
+ new Fukiya()
   ..get('/api/places', getHandler)
   ..post('/api/places', postHandler)
   ..staticFiles('web')
@@ -16,11 +23,13 @@ main() {
 void getHandler(FukiyaContext context) {
   var near = context.params['near'];
   print(near);
-  context.send(stringify(database));
+  context.jsonResponse(database);
 }
 
 void postHandler(FukiyaContext context) {
-  print(context.parsedBody);
+  //print(context.data);
+  //print('ID : ' + context.parsedBody['name']);
+  print(context.parsedBody['name']);
   context.send("OK");
 }
 
