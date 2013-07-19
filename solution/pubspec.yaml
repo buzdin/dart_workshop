@@ -1,10 +1,8 @@
 name: dart_workshop
 dependencies:
-  http: any
   browser: any
-  google_maps: any
-  js: any
-  web_ui: any
   unittest: any
-  mongo_dart: any
+  google_maps: any
   fukiya: any
+  http: any
+  mongo_dart: any
