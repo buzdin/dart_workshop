@@ -12,8 +12,11 @@ void main() {
 }
 
 void initialize(map) {
-  query('#name').value = 'My Place';
-  query('#icon').value = DEFAULT_ICON;
+  InputElement name = query('#name');
+  InputElement icon = query('#icon');
+
+  name.value = 'My Place';
+  icon.value = DEFAULT_ICON;
 
   loadPlaces(map);
 

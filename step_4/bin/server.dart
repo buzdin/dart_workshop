@@ -15,11 +15,15 @@ main() {
 }
 
 void getHandler(FukiyaContext context) {
+  var near = context.params['near'];
   // TODO use database to get places
+  context.jsonResponse(places);
 }
 
 void postHandler(FukiyaContext context) {
-// TODO use database to add place
+  var place = context.parsedBody;
+  // TODO use database to add place
+  context.send('OK');
 }
 
 
